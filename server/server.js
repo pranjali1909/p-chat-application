@@ -23,10 +23,6 @@ io.on('connection',(socket)=>{
 
     })
 
-    socket.on('typing', (data)=>{
-
-    })
-
     socket.on('disconnect',()=>{
 
     })
