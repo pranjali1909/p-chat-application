@@ -22,7 +22,7 @@ Built using Nodejs and Socket framework.It has the following features for users
 <li>Socket.io</li>
 <li>Moment</li>
 
-### Prerequisites
+## Prerequisites
 1. Node.js
 2. Basic HTML,CSS and JQuery
 3. Socket Programming
