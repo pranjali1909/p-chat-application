@@ -9,7 +9,33 @@ users = [];
 //
 
 var addUser = ({ id, username, room }) => {
+    //Clean the data
+    username = username.trim().toLowerCase();
+    room = room.trim().toLowerCase();
 
+    //Validate the data
+    if (!username || !room) {
+        return {
+            error: "Username and room are required"
+        }
+    }
+
+    //Check for existing user
+    var existingUser = users.find((user) => {
+        return (user.room === room && user.username === username)
+    })
+
+    //Validate Username
+    if (existingUser) {
+        return {
+            error: "Username in use"
+        }
+    }
+
+    //Store user
+    var user = { id, username, room };
+    users.push(user);
+    return { user };
 }
 
 //
@@ -17,7 +43,13 @@ var addUser = ({ id, username, room }) => {
 //
 
 var removeUser = (id) => {
+    var index = users.findIndex((user) => {
+        return user.id === id
+    });
 
+    if (index != -1) {
+        return users.splice(index, 1)[0];
+    }
 }
 
 //
@@ -25,7 +57,7 @@ var removeUser = (id) => {
 //
 
 var getUser = (id) => {
-
+    return users.find((user) => user.id === id)
 }
 
 //
@@ -33,7 +65,7 @@ var getUser = (id) => {
 //
 
 var getUserList = (room) => {
-
+    return users.filter((user) => user.room === room);
 }
 
 module.exports = {
