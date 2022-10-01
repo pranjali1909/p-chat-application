@@ -28,9 +28,5 @@ Built using Nodejs and Socket framework.It has the following features for users
 3. Socket Programming
 
 ## Deployment
-https://enigmatic-gorge-60782.herokuapp.com/
+https://p-chat-application-1909.herokuapp.com/
 
-<!-- CONTACT -->
-## Contact
-Name : Adriraj Chaudhuri<br>
-Email : adriraj@itg.ac.in
